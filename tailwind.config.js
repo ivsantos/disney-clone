@@ -13,6 +13,10 @@ module.exports = {
         'cta-secondary': '#000',
         'cta-secondary-hover': '#f9f9f9',
       },
+      spacing: {
+        'header-small': '52px',
+        'header-large': '70px',
+      },
     },
   },
   plugins: [],

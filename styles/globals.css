@@ -1,21 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
+    font-family: 'Montserrat', sans-serif;
     @apply bg-primary text-secondary;
   }
 }
 
 @layer components {
   .navbar {
-    @apply h-[70px];
+    @apply h-header-small sm:h-header-large;
   }
 
   .cta,
   .cta-secondary {
-    @apply cursor-pointer rounded-[4px] p-2 uppercase text-secondary transition duration-200;
+    @apply cursor-pointer rounded-[4px] p-2 text-center uppercase text-secondary transition duration-200;
   }
 
   .cta {
