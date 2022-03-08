@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -13,12 +13,12 @@
 
 @layer components {
   .navbar {
-    @apply h-header-small sm:h-header-large;
+    @apply h-header-small text-[13px] leading-[15px] sm:h-header-large;
   }
 
   .cta,
   .cta-secondary {
-    @apply cursor-pointer rounded-[4px] p-2 text-center uppercase text-secondary transition duration-200;
+    @apply cursor-pointer rounded-[4px] p-2 text-center uppercase text-secondary active:scale-95 active:opacity-70 active:transition active:duration-200;
   }
 
   .cta {

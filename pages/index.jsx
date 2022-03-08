@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import bgSmall from '../public/assets/images/bg-small.jpeg';
+import bgLarge from '../public/assets/images/bg-large.jpeg';
 
 const Home = () => {
   return (
@@ -12,8 +14,26 @@ const Home = () => {
       </Head>
 
       <main>
-        <section className="m-auto grid h-[calc(100vh_-_52px)] w-screen  max-w-[80%] place-content-center gap-4 sm:h-[calc(100vh_-_70px)]">
-          <div className="relative h-20 w-36 justify-self-center">
+        <div className="absolute top-0 -z-10 h-full w-full md:hidden">
+          <Image
+            alt="Disney+ Content Background Image"
+            src={bgSmall}
+            priority={true}
+            layout="responsive"
+            objectFit="contain"
+          />
+        </div>
+        <div className="absolute -z-10 hidden h-full w-full md:block">
+          <Image
+            alt="Disney+ Content Background Image"
+            src={bgLarge}
+            priority={true}
+            layout="responsive"
+            objectFit="contain"
+          />
+        </div>
+        <section className="m-auto grid min-h-[70vh]  w-screen max-w-[90%] place-content-center gap-4">
+          <div className="relative -z-10 h-20 w-36 justify-self-center">
             <Image
               alt="Disney+ Brand Logo"
               src="/assets/images/logo.svg"
@@ -21,23 +41,15 @@ const Home = () => {
               objectFit="contain"
             />
           </div>
-          <h1 className="text-center">
+          <h1 className="text-center text-xl font-semibold">
             Historias que esperas + historias que no imaginas
           </h1>
-          <h3 className="text-center text-xl sm:text-2xl">
-            9,99 €<span className="text-sm"> / mes</span>
+          <h3 className="text-center text-2xl font-semibold sm:text-2xl">
+            8,99 €<span className="text-xs"> / mes</span>
           </h3>
           <a className="cta m-auto w-4/5 px-6 py-3 text-sm sm:text-base">
             Suscríbete ya
           </a>
-          <div className="absolute top-0 left-0 -z-10 h-full w-full">
-            <Image
-              alt="Disney+ Content Background Image"
-              src="/assets/images/bg-small.jpeg"
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
         </section>
       </main>
     </>
