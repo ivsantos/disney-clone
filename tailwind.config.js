@@ -12,6 +12,7 @@ module.exports = {
         'cta-hover': '#016cf9',
         'cta-secondary': '#000',
         'cta-secondary-hover': '#f9f9f9',
+        silver: '#c0c0c0',
       },
       spacing: {
         'header-small': '52px',
