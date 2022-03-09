@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <header>
       <nav
-        className={`navbar fixed flex w-full items-center ${
+        className={`navbar fixed z-10 flex w-full items-center ${
           scrolled ? 'bg-primary' : 'bg-transparent'
         }`}
       >
