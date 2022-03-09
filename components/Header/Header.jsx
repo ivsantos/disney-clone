@@ -1,6 +1,5 @@
-import Image from 'next/image';
-import logo from '../../public/assets/images/logo.svg';
 import { useState, useEffect } from 'react';
+import DisneyLogo from '../DisneyLogo/DisneyLogo';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -34,7 +33,7 @@ const Header = () => {
               scrolled ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <Image src={logo} alt="Disney+ Brand Logo" layout="responsive" />
+            <DisneyLogo />
           </div>
           <a
             className={`cta m-[5px] flex h-10 items-center transition-opacity duration-500 ${
