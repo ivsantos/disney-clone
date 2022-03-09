@@ -3,7 +3,7 @@ import '../styles/globals.css';
 
 const App = ({ Component, pageProps }) => {
   return (
-    <div className="h-[200vh]">
+    <div>
       <Header />
       <Component {...pageProps} />
     </div>
