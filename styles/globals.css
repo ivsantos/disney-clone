@@ -26,6 +26,6 @@
   }
 
   .cta-secondary {
-    @apply border border-[silver] bg-cta-secondary bg-opacity-80 hover:bg-cta-secondary-hover hover:text-black;
+    @apply border border-silver bg-cta-secondary bg-opacity-80 hover:bg-cta-secondary-hover hover:text-black;
   }
 }
