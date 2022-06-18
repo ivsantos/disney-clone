@@ -16,7 +16,7 @@ const Footer = () => {
           <a>¿Quiénes somos?</a>
         </div>
         <p className="pt-4 text-center">
-          © 2021 Disney y entidades relacionadas. Reservados todos los derechos.
+          © 2022 Disney y entidades relacionadas. Reservados todos los derechos.
         </p>
       </div>
     </footer>
