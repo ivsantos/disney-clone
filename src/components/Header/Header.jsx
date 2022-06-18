@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useSession } from 'next-auth/react';
+import { useSession, signIn, signOut } from 'next-auth/react';
+
 import Link from 'next/link';
 
 import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
@@ -47,12 +48,15 @@ const Header = () => {
             </a>
           </Link>
           {session ? (
-            <a className="cta-secondary m-[5px] flex h-10 items-center">
+            <button
+              onClick={() => signOut({ callbackUrl: '/' })}
+              className="cta-secondary m-[5px] flex h-10 items-center"
+            >
               Cerrar sesión
-            </a>
+            </button>
           ) : (
             <>
-              <a
+              <button
                 className={`cta m-[5px] flex h-10 items-center transition-opacity duration-500 ${
                   hasScrolled
                     ? 'pointer-events-auto opacity-100'
@@ -60,10 +64,13 @@ const Header = () => {
                 }`}
               >
                 Suscríbete ya
-              </a>
-              <a className="cta-secondary m-[5px] flex h-10 items-center">
+              </button>
+              <button
+                onClick={() => signIn(undefined, { callbackUrl: '/catalog' })}
+                className="cta-secondary m-[5px] flex h-10 items-center"
+              >
                 Iniciar sesión
-              </a>
+              </button>
             </>
           )}
         </div>
