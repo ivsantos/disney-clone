@@ -30,7 +30,11 @@ const Header = () => {
           hasScrolled ? 'bg-primary' : 'bg-transparent'
         }`}
       >
-        <div className="mr-3 flex h-full w-full items-center justify-end sm:text-base">
+        <div
+          className={`mr-3 ml-5 flex h-full w-full items-center sm:text-base ${
+            session ? 'justify-between' : 'justify-start'
+          }`}
+        >
           <Link href="/">
             <a
               className={`mr-4 w-16 transition-opacity duration-500 md:w-20 ${
