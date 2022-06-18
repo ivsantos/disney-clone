@@ -12,9 +12,7 @@ const Home = () => {
         <title>
           Disney+ España | Historias que esperas + historias que no imaginas
         </title>
-        <link rel="icon" href="/assets/favicon.ico" />
       </Head>
-
       <main>
         <HomeBackground />
         <Hero />
