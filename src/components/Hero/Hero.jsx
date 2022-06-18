@@ -7,7 +7,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="m-auto grid min-h-[70vh]  w-screen max-w-[90%] place-content-center gap-4 pt-36">
+    <section
+      id="subscribe-section"
+      className="m-auto grid min-h-[70vh]  w-screen max-w-[90%] place-content-center gap-4 pt-36"
+    >
       <div className="relative -z-10 h-20 w-32 justify-self-center md:w-40 lg:w-44">
         <DisneyLogo />
       </div>
