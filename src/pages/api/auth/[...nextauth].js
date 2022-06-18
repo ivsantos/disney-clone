@@ -3,6 +3,9 @@ import GithubProvider from 'next-auth/providers/github';
 import CognitoProvider from 'next-auth/providers/cognito';
 
 export default NextAuth({
+  theme: {
+    colorScheme: 'dark',
+  },
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID,
