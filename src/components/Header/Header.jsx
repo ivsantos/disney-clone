@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useSession } from 'next-auth/react';
+
 import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const { data: session } = useSession();
 
   const handleScroll = () => {
     if (window.scrollY > 500) {
@@ -35,16 +38,24 @@ const Header = () => {
           >
             <DisneyLogo />
           </div>
-          <a
-            className={`cta m-[5px] flex h-10 items-center transition-opacity duration-500 ${
-              scrolled ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            Suscríbete ya
-          </a>
-          <a className="cta-secondary m-[5px] flex h-10 items-center">
-            Iniciar sesión
-          </a>
+          {session ? (
+            <a className="cta-secondary m-[5px] flex h-10 items-center">
+              Cerrar sesión
+            </a>
+          ) : (
+            <>
+              <a
+                className={`cta m-[5px] flex h-10 items-center transition-opacity duration-500 ${
+                  scrolled ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                Suscríbete ya
+              </a>
+              <a className="cta-secondary m-[5px] flex h-10 items-center">
+                Iniciar sesión
+              </a>
+            </>
+          )}
         </div>
       </nav>
     </header>
