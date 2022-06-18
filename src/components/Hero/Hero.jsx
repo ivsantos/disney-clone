@@ -1,7 +1,7 @@
 import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
 import DownArrow from '@/components/DownArrow/DownArrow';
 
-const HeroSection = () => {
+const Hero = () => {
   const handleScrollIntoContent = (e) => {
     e.target.scrollIntoView({ behavior: 'smooth' });
   };
@@ -40,4 +40,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default Hero;

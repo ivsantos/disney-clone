@@ -1,8 +1,8 @@
 import Head from 'next/head';
 
 import Footer from '@/components/Footer/Footer';
-import DevicesSection from '@/components/DevicesSection/DevicesSection';
-import HeroSection from '@/components/HeroSection/HeroSection';
+import StreamDevices from '@/components/StreamDevices/StreamDevices';
+import Hero from '@/components/Hero/Hero';
 import HomeBackground from '@/components/HomeBackground/HomeBackground';
 
 const Home = () => {
@@ -17,8 +17,8 @@ const Home = () => {
 
       <main>
         <HomeBackground />
-        <HeroSection />
-        <DevicesSection />
+        <Hero />
+        <StreamDevices />
         <Footer />
       </main>
     </>
