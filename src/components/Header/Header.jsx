@@ -18,7 +18,9 @@ const Header = () => {
     }, options);
 
     const subscribeSection = document.querySelector('#subscribe-section');
-    observer.observe(subscribeSection);
+    if (subscribeSection) {
+      observer.observe(subscribeSection);
+    }
   }, []);
 
   return (
