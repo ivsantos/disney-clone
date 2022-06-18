@@ -33,7 +33,9 @@ const Header = () => {
         <div className="mr-3 flex h-full w-full items-center justify-end sm:text-base">
           <div
             className={`mr-4 w-16 transition-opacity duration-500 md:w-20 ${
-              scrolled ? 'opacity-100' : 'opacity-0'
+              scrolled
+                ? 'pointer-events-auto opacity-100'
+                : 'pointer-events-none opacity-0'
             }`}
           >
             <DisneyLogo />
@@ -46,7 +48,9 @@ const Header = () => {
             <>
               <a
                 className={`cta m-[5px] flex h-10 items-center transition-opacity duration-500 ${
-                  scrolled ? 'opacity-100' : 'opacity-0'
+                  scrolled
+                    ? 'pointer-events-auto opacity-100'
+                    : 'pointer-events-none opacity-0'
                 }`}
               >
                 Suscríbete ya
