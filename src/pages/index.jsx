@@ -1,9 +1,9 @@
 import Head from 'next/head';
 
-import Footer from '../components/Footer/Footer';
-import DevicesSection from '../components/DevicesSection/DevicesSection';
-import HeroSection from '../components/HeroSection/HeroSection';
-import HomeBackground from '../components/HomeBackground/HomeBackground';
+import Footer from '@/components/Footer/Footer';
+import DevicesSection from '@/components/DevicesSection/DevicesSection';
+import HeroSection from '@/components/HeroSection/HeroSection';
+import HomeBackground from '@/components/HomeBackground/HomeBackground';
 
 const Home = () => {
   return (

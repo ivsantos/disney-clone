@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import DisneyLogo from '../DisneyLogo/DisneyLogo';
+import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);

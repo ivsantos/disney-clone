@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import bgSmall from '../../public/assets/images/bg-small.jpeg';
-import bgLarge from '../../public/assets/images/bg-large.jpeg';
+import bgSmall from '@/images/bg-small.jpeg';
+import bgLarge from '@/images/bg-large.jpeg';
 
 const HomeBackground = () => {
   return (

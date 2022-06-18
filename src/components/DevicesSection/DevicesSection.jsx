@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import streamDevices from '../../public/assets/images/streamDevices.png';
+import streamDevices from '@/images/streamDevices.png';
 
 const StreamDevices = () => {
   return (

@@ -1,5 +1,5 @@
-import DisneyLogo from '../DisneyLogo/DisneyLogo';
-import DownArrow from '../DownArrow/DownArrow';
+import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
+import DownArrow from '@/components/DownArrow/DownArrow';
 
 const HeroSection = () => {
   const handleScrollIntoContent = (e) => {

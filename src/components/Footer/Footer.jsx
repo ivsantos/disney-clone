@@ -1,4 +1,4 @@
-import DisneyLogo from '../DisneyLogo/DisneyLogo';
+import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
 
 const Footer = () => {
   return (
