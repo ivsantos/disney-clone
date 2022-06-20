@@ -29,3 +29,15 @@
     @apply border border-silver bg-cta-secondary bg-opacity-80 hover:bg-cta-secondary-hover hover:text-black;
   }
 }
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}

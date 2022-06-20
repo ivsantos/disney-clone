@@ -1,7 +1,54 @@
 import { getSession } from 'next-auth/react';
+import Head from 'next/head';
+import Image from 'next/image';
+
+import slider1 from '@/images/slider-1.jpg';
+import slider2 from '@/images/slider-2.jpg';
+import slider3 from '@/images/slider-3.jpg';
+import slider4 from '@/images/slider-4.jpg';
 
 const catalog = () => {
-  return <div />;
+  return (
+    <>
+      <Head>
+        <title>Disney+ España | Películas y series</title>
+      </Head>
+      <div className="no-scrollbar grid snap-x snap-mandatory grid-flow-col gap-4 overflow-y-auto overscroll-x-contain">
+        <div className="w-60 snap-center">
+          <Image
+            alt="Slider 1"
+            src={slider1}
+            priority={true}
+            objectFit="contain"
+          />
+        </div>
+        <div className="w-60 snap-center">
+          <Image
+            alt="Slider 2"
+            src={slider2}
+            priority={true}
+            objectFit="contain"
+          />
+        </div>
+        <div className="w-60 snap-center">
+          <Image
+            alt="Slider 3"
+            src={slider3}
+            priority={true}
+            objectFit="contain"
+          />
+        </div>
+        <div className="w-60 snap-center">
+          <Image
+            alt="Slider 4"
+            src={slider4}
+            priority={true}
+            objectFit="contain"
+          />
+        </div>
+      </div>
+    </>
+  );
 };
 
 export async function getServerSideProps(context) {
