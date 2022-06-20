@@ -4,6 +4,7 @@ import { useSession, signIn, signOut } from 'next-auth/react';
 import Link from 'next/link';
 
 import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
+import NavList from '@/components/NavList/NavList';
 
 const Header = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -38,7 +39,7 @@ const Header = () => {
         >
           <Link href="/">
             <a
-              className={`mr-4 w-16 transition-opacity duration-500 md:w-20 ${
+              className={`mr-4 w-16 transition-opacity duration-500 md:pointer-events-auto md:w-20 md:opacity-100 ${
                 hasScrolled
                   ? 'pointer-events-auto opacity-100'
                   : 'pointer-events-none opacity-0'
@@ -48,12 +49,15 @@ const Header = () => {
             </a>
           </Link>
           {session ? (
-            <button
-              onClick={() => signOut({ callbackUrl: '/' })}
-              className="cta-secondary m-[5px] flex h-10 items-center"
-            >
-              Cerrar sesión
-            </button>
+            <>
+              <NavList />
+              <button
+                onClick={() => signOut({ callbackUrl: '/' })}
+                className="cta-secondary m-[5px] flex h-10 items-center"
+              >
+                Cerrar sesión
+              </button>
+            </>
           ) : (
             <>
               <button

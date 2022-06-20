@@ -1,7 +1,7 @@
 import { getSession } from 'next-auth/react';
 
 const catalog = () => {
-  return <div>catalog</div>;
+  return <div />;
 };
 
 export async function getServerSideProps(context) {
