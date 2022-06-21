@@ -16,6 +16,10 @@
     @apply h-header-small text-[13px] leading-[15px] sm:h-header-large;
   }
 
+  .header-space {
+    @apply mt-header-small sm:mt-header-large;
+  }
+
   .cta,
   .cta-secondary {
     @apply cursor-pointer rounded-[4px] p-2 text-center uppercase text-secondary active:scale-95 active:opacity-70 active:transition active:duration-200;

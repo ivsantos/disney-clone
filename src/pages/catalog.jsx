@@ -13,14 +13,7 @@ const catalog = () => {
       <Head>
         <title>Disney+ España | Películas y series</title>
       </Head>
-      <div className="no-scrollbar grid snap-x snap-mandatory grid-flow-col gap-4 overflow-y-auto overscroll-x-contain">
-        <div className="w-60 snap-center">
-          <Image
-            alt="Slider 1"
-            src={slider1}
-            priority={true}
-            objectFit="contain"
-          />
+      <main className="header-space">
         </div>
         <div className="w-60 snap-center">
           <Image
@@ -45,8 +38,7 @@ const catalog = () => {
             priority={true}
             objectFit="contain"
           />
-        </div>
-      </div>
+      </main>
     </>
   );
 };
