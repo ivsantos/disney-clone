@@ -1,5 +1,9 @@
 import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
 
+/**
+ * Renders the footer component.
+ * @returns {JSX.Element}
+ */
 const Footer = () => {
   return (
     <footer className="my-8">

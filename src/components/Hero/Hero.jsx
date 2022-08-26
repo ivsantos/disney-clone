@@ -1,6 +1,10 @@
 import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
 import DownArrow from '@/components/DownArrow/DownArrow';
 
+/**
+ * Renders the hero component.
+ * @returns {JSX.Element}
+ */
 const Hero = () => {
   const handleScrollIntoContent = (e) => {
     e.target.scrollIntoView({ behavior: 'smooth' });

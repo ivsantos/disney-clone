@@ -3,6 +3,10 @@ import Image from 'next/image';
 import bgSmall from '@/images/bg-small.jpeg';
 import bgLarge from '@/images/bg-large.jpeg';
 
+/**
+ * Renders the home background component.
+ * @returns {JSX.Element}
+ */
 const HomeBackground = () => {
   return (
     <>

@@ -3,6 +3,10 @@ import Link from 'next/link';
 import IconWrap from '@/components/IconWrap/IconWrap';
 import navList from '@/lib/navList';
 
+/**
+ * Renders the navigation list component.
+ * @returns {JSX.Element}
+ */
 const NavList = () => {
   return (
     <ul className="ml-8 hidden md:flex md:w-full md:justify-start md:gap-2 md:text-xs">

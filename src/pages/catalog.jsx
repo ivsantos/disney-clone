@@ -14,7 +14,11 @@ import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const catalog = () => {
+/**
+ * Catalog page.
+ * @returns {JSX.Element}
+ */
+const Catalog = () => {
   return (
     <>
       <Head>
@@ -72,6 +76,10 @@ const catalog = () => {
   );
 };
 
+/**
+ * Grabs the user's session server side and redirects to the login page if not logged in.
+ * @param {any} context
+ */
 export async function getServerSideProps(context) {
   const session = await getSession(context);
 
@@ -91,4 +99,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default catalog;
+export default Catalog;

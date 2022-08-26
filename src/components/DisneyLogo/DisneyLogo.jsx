@@ -1,3 +1,8 @@
+/**
+ * Renders the Disney logo (SVG) component.
+ * @param {any} props
+ * @returns {JSX.Element}
+ */
 const DisneyLogo = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1044.9 568.7" {...props}>
     <defs>

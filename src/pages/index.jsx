@@ -6,6 +6,10 @@ import StreamDevices from '@/components/StreamDevices/StreamDevices';
 import Hero from '@/components/Hero/Hero';
 import HomeBackground from '@/components/HomeBackground/HomeBackground';
 
+/**
+ * Home page.
+ * @returns {JSX.Element}
+ */
 const Home = () => {
   return (
     <>
@@ -24,6 +28,10 @@ const Home = () => {
   );
 };
 
+/**
+ * Grabs the user's session server side and redirects to the catalog page if logged in.
+ * @param {any} context
+ */
 export async function getServerSideProps(context) {
   const session = await getSession(context);
 
@@ -31,7 +39,7 @@ export async function getServerSideProps(context) {
     return {
       redirect: {
         destination: '/catalog',
-        permanent: false,
+        permanent: true,
       },
     };
   }

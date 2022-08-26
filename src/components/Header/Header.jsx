@@ -6,6 +6,10 @@ import Link from 'next/link';
 import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
 import NavList from '@/components/NavList/NavList';
 
+/**
+ * Renders the header component.
+ * @returns {JSX.Element}
+ */
 const Header = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
   const { data: session } = useSession();

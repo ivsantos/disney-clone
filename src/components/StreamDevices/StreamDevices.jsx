@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import streamDevices from '@/images/streamDevices.png';
 
+/**
+ * Renders the devices that can stream content.
+ * @returns {JSX.Element}
+ */
 const StreamDevices = () => {
   return (
     <section className="px-5">

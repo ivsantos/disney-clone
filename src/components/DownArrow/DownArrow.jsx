@@ -1,3 +1,8 @@
+/**
+ * Renders the down arrow (SVG) component.
+ * @param {any} props
+ * @returns {JSX.Element}
+ */
 const DownArrow = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

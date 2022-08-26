@@ -1,9 +1,11 @@
-import { IconHome } from '@tabler/icons';
-import { IconSearch } from '@tabler/icons';
-import { IconPlus } from '@tabler/icons';
-import { IconStar } from '@tabler/icons';
-import { IconMovie } from '@tabler/icons';
-import { IconDeviceTv } from '@tabler/icons';
+import {
+  IconHome,
+  IconSearch,
+  IconPlus,
+  IconStar,
+  IconMovie,
+  IconDeviceTv,
+} from '@tabler/icons';
 
 const navList = [
   {
