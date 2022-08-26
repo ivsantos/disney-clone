@@ -1,10 +1,9 @@
-import Head from 'next/head';
-import { getSession } from 'next-auth/react';
-
 import Footer from '@/components/Footer/Footer';
-import StreamDevices from '@/components/StreamDevices/StreamDevices';
 import Hero from '@/components/Hero/Hero';
 import HomeBackground from '@/components/HomeBackground/HomeBackground';
+import StreamDevices from '@/components/StreamDevices/StreamDevices';
+import { getSession } from 'next-auth/react';
+import Head from 'next/head';
 
 /**
  * Home page.

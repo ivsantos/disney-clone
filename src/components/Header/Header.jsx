@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react';
-import { useSession, signIn, signOut } from 'next-auth/react';
-
-import Link from 'next/link';
-
 import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
 import NavList from '@/components/NavList/NavList';
+import { signIn, signOut, useSession } from 'next-auth/react';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 /**
  * Renders the header component.

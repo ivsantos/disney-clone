@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import streamDevices from '@/images/streamDevices.png';
+import Image from 'next/image';
 
 /**
  * Renders the devices that can stream content.

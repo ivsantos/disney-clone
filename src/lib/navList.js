@@ -1,10 +1,10 @@
 import {
-  IconHome,
-  IconSearch,
-  IconPlus,
-  IconStar,
-  IconMovie,
   IconDeviceTv,
+  IconHome,
+  IconMovie,
+  IconPlus,
+  IconSearch,
+  IconStar,
 } from '@tabler/icons';
 
 const navList = [

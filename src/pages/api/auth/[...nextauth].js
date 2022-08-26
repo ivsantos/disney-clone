@@ -1,6 +1,6 @@
 import NextAuth from 'next-auth';
-import GithubProvider from 'next-auth/providers/github';
 import CognitoProvider from 'next-auth/providers/cognito';
+import GithubProvider from 'next-auth/providers/github';
 
 export default NextAuth({
   theme: {

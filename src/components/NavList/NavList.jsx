@@ -1,7 +1,6 @@
-import Link from 'next/link';
-
 import IconWrap from '@/components/IconWrap/IconWrap';
 import navList from '@/lib/navList';
+import Link from 'next/link';
 
 /**
  * Renders the navigation list component.

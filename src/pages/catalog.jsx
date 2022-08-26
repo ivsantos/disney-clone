@@ -1,18 +1,16 @@
-import { getSession } from 'next-auth/react';
-import Head from 'next/head';
-import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/navigation';
 
 import slider1 from '@/images/slider-1.jpg';
 import slider2 from '@/images/slider-2.jpg';
 import slider3 from '@/images/slider-3.jpg';
 import slider4 from '@/images/slider-4.jpg';
-
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { getSession } from 'next-auth/react';
+import Head from 'next/head';
+import Image from 'next/image';
+import { Autoplay, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 /**
  * Catalog page.
@@ -26,17 +24,15 @@ const Catalog = () => {
       </Head>
       <main className="header-space">
         <Swiper
-          spaceBetween={50}
+          lazy={{ checkInView: true }}
           slidesPerView={1}
           autoplay={{
             delay: 5000,
             pauseOnMouseEnter: true,
           }}
-          navigation={true}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Autoplay, Navigation, Pagination]}
+          navigation={false}
+          rewind
+          modules={[Autoplay, Pagination]}
         >
           <SwiperSlide>
             <Image

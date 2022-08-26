@@ -1,7 +1,6 @@
-import Image from 'next/image';
-
-import bgSmall from '@/images/bg-small.jpeg';
 import bgLarge from '@/images/bg-large.jpeg';
+import bgSmall from '@/images/bg-small.jpeg';
+import Image from 'next/image';
 
 /**
  * Renders the home background component.
