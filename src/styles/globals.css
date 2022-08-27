@@ -12,14 +12,6 @@
 }
 
 @layer components {
-  .navbar {
-    @apply h-header-small text-[13px] leading-[15px] sm:h-header-large;
-  }
-
-  .header-space {
-    @apply mt-header-small sm:mt-header-large;
-  }
-
   .cta,
   .cta-secondary {
     @apply cursor-pointer rounded-[4px] p-2 text-center uppercase text-secondary active:scale-95 active:opacity-70 active:transition active:duration-200;
@@ -31,6 +23,26 @@
 
   .cta-secondary {
     @apply border border-silver bg-cta-secondary bg-opacity-80 hover:bg-cta-secondary-hover hover:text-black;
+  }
+
+  .navbar {
+    @apply h-header-small text-[13px] leading-[15px] sm:h-header-large;
+  }
+
+  .carousel {
+    @apply mt-header-small sm:mt-header-large;
+  }
+
+  .carousel-slide,
+  .carousel-img {
+    @apply rounded-lg;
+  }
+  .carousel-slide {
+    @apply border border-secondary;
+  }
+
+  .brand {
+    @apply relative flex h-32 w-52 cursor-pointer rounded-lg border-[3px] border-secondary border-opacity-10 transition duration-300 hover:scale-105 hover:border-opacity-80;
   }
 }
 
