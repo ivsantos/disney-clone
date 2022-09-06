@@ -3,6 +3,7 @@ import NavList from '@/components/NavList/NavList';
 import { HERO_ID } from '@/lib/constants';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
+import { useCallback } from 'react';
 import useIntersection from 'src/hooks/useIntersection/useIntersection';
 
 /**
@@ -12,6 +13,14 @@ import useIntersection from 'src/hooks/useIntersection/useIntersection';
 const Header = () => {
   const { data: session } = useSession();
   const isIntersecting = useIntersection(`#${HERO_ID}`);
+
+  const handleSignIn = useCallback(() => {
+    signIn(undefined, { callbackUrl: '/catalog' });
+  }, []);
+
+  const handleSignOut = useCallback(() => {
+    signOut({ callbackUrl: '/' });
+  }, []);
 
   return (
     <header>
@@ -40,7 +49,7 @@ const Header = () => {
             <>
               <NavList />
               <button
-                onClick={() => signOut({ callbackUrl: '/' })}
+                onClick={handleSignOut}
                 className="cta-secondary m-[5px] flex h-10 items-center"
               >
                 Cerrar sesión
@@ -58,7 +67,7 @@ const Header = () => {
                 Suscríbete ya
               </button>
               <button
-                onClick={() => signIn(undefined, { callbackUrl: '/catalog' })}
+                onClick={handleSignIn}
                 className="cta-secondary m-[5px] flex h-10 items-center"
               >
                 Iniciar sesión
