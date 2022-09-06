@@ -2,7 +2,7 @@ import Footer from '@/components/Footer/Footer';
 import Hero from '@/components/Hero/Hero';
 import HomeBackground from '@/components/HomeBackground/HomeBackground';
 import StreamDevices from '@/components/StreamDevices/StreamDevices';
-import { getSession } from 'next-auth/react';
+import { unstable_getServerSession } from 'next-auth/react';
 import Head from 'next/head';
 
 /**
@@ -32,7 +32,7 @@ const Home = () => {
  * @param {any} context
  */
 export async function getServerSideProps(context) {
-  const session = await getSession(context);
+  const session = await unstable_getServerSession(context);
 
   if (session) {
     return {

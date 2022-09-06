@@ -1,6 +1,6 @@
 import Brands from '@/components/Brands/Brands';
 import Carousel from '@/components/Carousel/Carousel';
-import { getSession } from 'next-auth/react';
+import { unstable_getServerSession } from 'next-auth';
 import Head from 'next/head';
 
 /**
@@ -24,7 +24,7 @@ const Catalog = () => {
  * @param {any} context
  */
 export async function getServerSideProps(context) {
-  const session = await getSession(context);
+  const session = await unstable_getServerSession(context);
 
   if (!session) {
     return {
