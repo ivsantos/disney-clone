@@ -42,7 +42,7 @@
   }
 
   .brand {
-    @apply relative flex h-32 w-52 cursor-pointer rounded-lg border-[3px] border-secondary border-opacity-10 transition duration-300 hover:scale-105 hover:border-opacity-80;
+    @apply relative flex h-32 w-full cursor-pointer rounded-lg border-[3px] border-secondary border-opacity-10 transition duration-300 hover:scale-105 hover:border-opacity-80;
   }
 }
 

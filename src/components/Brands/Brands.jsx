@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Brands() {
   return (
-    <section className="mt-8 flex flex-col place-items-center gap-6 md:flex-row">
+    <section className="m-8 grid grid-flow-row grid-cols-brands place-content-center gap-6">
       {brandList.map((brand) => (
         <div key={brand.name} className="brand group">
           <Image alt="" src={brand.logo} objectFit="cover" layout="fill" />
