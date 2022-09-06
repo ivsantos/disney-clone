@@ -7,7 +7,16 @@ import Head from 'next/head';
  * Catalog page.
  * @returns {JSX.Element}
  */
-const Catalog = () => {
+  const { status } = useSession({
+    required: true,
+    onUnauthenticated() {
+      signIn();
+    },
+  });
+
+  if (status === 'loading') {
+    return 'Loading or not authenticated...';
+  }
   return (
     <>
       <Head>

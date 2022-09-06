@@ -2,7 +2,7 @@ import NextAuth from 'next-auth';
 import CognitoProvider from 'next-auth/providers/cognito';
 import GithubProvider from 'next-auth/providers/github';
 
-export default NextAuth({
+export const authOptions = {
   theme: {
     colorScheme: 'dark',
   },
@@ -17,4 +17,6 @@ export default NextAuth({
       issuer: process.env.COGNITO_ISSUER,
     }),
   ],
-});
+};
+
+export default NextAuth(authOptions);
