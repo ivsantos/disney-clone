@@ -1,37 +1,23 @@
 import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
 import NavList from '@/components/NavList/NavList';
+import { HERO_ID } from '@/lib/constants';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import useIntersection from 'src/hooks/useIntersection/useIntersection';
 
 /**
  * Renders the header component.
  * @returns {JSX.Element}
  */
 const Header = () => {
-  const [hasScrolled, setHasScrolled] = useState(false);
   const { data: session } = useSession();
-
-  useEffect(() => {
-    const options = {
-      threshold: 0.2,
-    };
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setHasScrolled(!entry.isIntersecting);
-    }, options);
-
-    const subscribeSection = document.querySelector('#subscribe-section');
-    if (subscribeSection) {
-      observer.observe(subscribeSection);
-    }
-  }, []);
+  const isIntersecting = useIntersection(`#${HERO_ID}`);
 
   return (
     <header>
       <nav
         className={`navbar fixed top-0 z-10 flex w-full items-center ${
-          hasScrolled ? 'bg-primary' : 'bg-transparent'
+          isIntersecting ? 'bg-transparent' : 'bg-primary'
         }`}
       >
         <div
@@ -42,9 +28,9 @@ const Header = () => {
           <Link href="/">
             <a
               className={`mr-4 w-16 transition-opacity duration-500 md:pointer-events-auto md:w-20 md:opacity-100 ${
-                hasScrolled
-                  ? 'pointer-events-auto opacity-100'
-                  : 'pointer-events-none opacity-0'
+                isIntersecting
+                  ? 'pointer-events-none opacity-0'
+                  : 'pointer-events-auto opacity-100'
               }`}
             >
               <DisneyLogo />
@@ -64,9 +50,9 @@ const Header = () => {
             <>
               <button
                 className={`cta m-[5px] flex h-10 items-center transition-opacity duration-500 ${
-                  hasScrolled
-                    ? 'pointer-events-auto opacity-100'
-                    : 'pointer-events-none opacity-0'
+                  isIntersecting
+                    ? 'pointer-events-none opacity-0'
+                    : 'pointer-events-auto opacity-100'
                 }`}
               >
                 Suscríbete ya
