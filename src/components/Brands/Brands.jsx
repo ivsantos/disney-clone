@@ -3,10 +3,15 @@ import Image from 'next/image';
 
 export default function Brands() {
   return (
-    <section className="m-8 grid grid-flow-row grid-cols-brands place-content-center gap-6">
+    <section className="m-8 flex flex-row flex-wrap place-content-center gap-6">
       {brandList.map((brand) => (
         <div key={brand.name} className="brand group">
-          <Image alt="" src={brand.logo} objectFit="cover" layout="fill" />
+          <Image
+            alt={brand.name}
+            src={brand.logo}
+            objectFit="cover"
+            layout="fill"
+          />
           <video
             autoPlay
             loop

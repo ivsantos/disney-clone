@@ -18,9 +18,6 @@ module.exports = {
         'header-small': '52px',
         'header-large': '70px',
       },
-      gridTemplateColumns: {
-        brands: 'repeat(auto-fit, minmax(max-content, 200px))',
-      },
     },
   },
   plugins: [],
