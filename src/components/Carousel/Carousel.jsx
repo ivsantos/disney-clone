@@ -1,6 +1,6 @@
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import slider1 from '@/images/slider-1.jpg';
 import slider2 from '@/images/slider-2.jpg';
@@ -10,9 +10,28 @@ import Image from 'next/image';
 import { Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+const carouselItems = [
+  {
+    src: slider1,
+    alt: 'Toy Story',
+  },
+  {
+    src: slider2,
+    alt: 'Star Wars',
+  },
+  {
+    src: slider3,
+    alt: 'The Simpsons',
+  },
+  {
+    src: slider4,
+    alt: 'The Mandalorian',
+  },
+];
+
 export default function Carousel() {
   return (
-    <section className="carousel">
+    <section className="slider">
       <Swiper
         lazy={{ checkInView: true }}
         slidesPerView={1.1}
@@ -27,46 +46,18 @@ export default function Carousel() {
         navigation={false}
         modules={[Autoplay, Pagination]}
       >
-        <SwiperSlide className="carousel-slide">
-          <Image
-            className="carousel-img"
-            alt="Slider 1"
-            src={slider1}
-            priority={true}
-            objectFit="contain"
-            layout="responsive"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="carousel-slide">
-          <Image
-            className="carousel-img"
-            alt="Slider 2"
-            src={slider2}
-            priority={true}
-            objectFit="contain"
-            layout="responsive"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="carousel-slide">
-          <Image
-            className="carousel-img"
-            alt="Slider 3"
-            src={slider3}
-            priority={true}
-            objectFit="contain"
-            layout="responsive"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="carousel-slide">
-          <Image
-            className="carousel-img"
-            alt="Slider 4"
-            src={slider4}
-            priority={true}
-            objectFit="contain"
-            layout="responsive"
-          />
-        </SwiperSlide>
+        {carouselItems.map((item) => (
+          <SwiperSlide key={item.alt} className="slider-slide">
+            <Image
+              className="slider-img"
+              alt={item.alt}
+              src={item.src}
+              priority={true}
+              objectFit="contain"
+              layout="responsive"
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </section>
   );
