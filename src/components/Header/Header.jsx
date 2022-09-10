@@ -3,6 +3,7 @@ import NavList from '@/components/NavList/NavList';
 import { HERO_ID } from '@/lib/constants';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 import useIntersection from 'src/hooks/useIntersection/useIntersection';
 
@@ -13,6 +14,12 @@ import useIntersection from 'src/hooks/useIntersection/useIntersection';
 const Header = () => {
   const { data: session } = useSession();
   const isIntersecting = useIntersection(`#${HERO_ID}`);
+  const router = useRouter();
+
+  let isDetailsPage = false;
+  if (router.query?.show && router.query?.id) {
+    isDetailsPage = true;
+  }
 
   const handleSignIn = useCallback(() => {
     signIn(undefined, { callbackUrl: '/catalog' });
@@ -26,7 +33,7 @@ const Header = () => {
     <header>
       <nav
         className={`navbar fixed top-0 z-10 flex w-full items-center ${
-          isIntersecting ? 'bg-transparent' : 'bg-primary'
+          isIntersecting || isDetailsPage ? 'bg-transparent' : 'bg-primary'
         }`}
       >
         <div
