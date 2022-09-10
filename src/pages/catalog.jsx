@@ -9,7 +9,7 @@ import Head from 'next/head';
  * @typedef {Object} Props
  * @property {any} list
  * @param {Props} props
- * @returns {JSX.Element}
+ * @returns {JSX.Element | null}
  */
 const Catalog = ({ list }) => {
   const { status } = useSession({
@@ -19,11 +19,7 @@ const Catalog = ({ list }) => {
     },
   });
 
-  if (status === 'loading') {
-    return 'Loading or not authenticated...';
-  }
-
-  return (
+  return status === 'authenticated' ? (
     <>
       <Head>
         <title>Disney+ España | Películas y series</title>
@@ -32,7 +28,7 @@ const Catalog = ({ list }) => {
       <Brands />
       <CatalogList list={list} />
     </>
-  );
+  ) : null;
 };
 
 export async function getStaticProps() {
@@ -70,6 +66,8 @@ export async function getStaticProps() {
   const list = [
     {
       title: 'Películas más valoradas',
+      type: 'movie',
+      touchpoint: 'top_rated',
       page: 1,
       results: [
         {
@@ -419,6 +417,8 @@ export async function getStaticProps() {
     },
     {
       title: 'Películas populares',
+      type: 'movie',
+      touchpoint: 'popular',
       page: 1,
       results: [
         {
@@ -768,6 +768,8 @@ export async function getStaticProps() {
     },
     {
       title: 'Series más valoradas',
+      type: 'tv',
+      touchpoint: 'top_rated',
       page: 1,
       results: [
         {
@@ -1097,6 +1099,8 @@ export async function getStaticProps() {
     },
     {
       title: 'Series populares',
+      type: 'tv',
+      touchpoint: 'popular',
       page: 1,
       results: [
         {
