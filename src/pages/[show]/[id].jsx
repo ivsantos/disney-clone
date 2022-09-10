@@ -14,17 +14,18 @@ export default function Id({ details, videos }) {
         <title>{`Ver ${details.title} | Disney+`}</title>
       </Head>
       <section>
-        <div className="absolute top-0 -z-10 h-full w-full">
+        <div className="relative">
           <Image
             alt={details.title}
             src={`${IMG_URL}${details.backdrop_path || details.poster_path}`}
             priority={true}
             layout="responsive"
-            objectFit="contain"
             width={1920}
             height={1080}
           />
+          <div className="absolute inset-0 bg-gradient-radial" />
         </div>
+        <p>{details.title}</p>
       </section>
     </>
   );

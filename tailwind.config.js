@@ -18,6 +18,10 @@ module.exports = {
         'header-small': '52px',
         'header-large': '70px',
       },
+      backgroundImage: {
+        'gradient-radial':
+          'radial-gradient(farthest-side at 70% 20%, transparent, #040714)',
+      },
     },
   },
   plugins: [],
