@@ -39,7 +39,8 @@
   }
 
   .slider-img,
-  .slider-slide {
+  .slider-slide,
+  .catalog-img {
     @apply rounded-lg;
   }
 
@@ -52,12 +53,12 @@
     @apply relative flex h-32 w-52 cursor-pointer rounded-lg border-[3px] border-secondary border-opacity-10 transition duration-300 hover:scale-105 hover:border-opacity-80;
   }
 
-  .poster {
-    @apply !h-28 !w-32 !transform border-opacity-0 md:!h-32 md:!w-40 lg:!h-40 lg:!w-52;
+  .catalog {
+    @apply no-scrollbar relative flex gap-4 overflow-y-hidden overflow-x-scroll py-4 pl-8 md:gap-6 lg:gap-8;
   }
 
-  .catalog {
-    @apply h-32 !p-2 md:h-40 lg:h-52;
+  .poster {
+    @apply h-28 w-32 transform border-opacity-0 md:h-40 md:w-48 lg:h-48 lg:w-52 xl:h-52 xl:w-64;
   }
 }
 
@@ -71,11 +72,4 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
-}
-
-/* Swiper modifications */
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  color: #fff !important;
-  font-size: 1.25rem !important;
 }
