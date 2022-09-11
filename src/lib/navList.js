@@ -16,27 +16,27 @@ const navList = [
   {
     name: 'BÚSQUEDA',
     icon: IconSearch,
-    href: '/search',
+    href: '/',
   },
   {
     name: 'MI LISTA',
     icon: IconPlus,
-    href: '/list',
+    href: '/',
   },
   {
     name: 'ORIGINALES',
     icon: IconStar,
-    href: '/movies',
+    href: '/',
   },
   {
     name: 'PELÍCULAS',
     icon: IconMovie,
-    href: '/movies',
+    href: '/',
   },
   {
     name: 'SERIES',
     icon: IconDeviceTv,
-    href: '/series',
+    href: '/',
   },
 ];
 
