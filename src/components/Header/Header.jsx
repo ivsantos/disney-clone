@@ -1,11 +1,11 @@
 import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
 import NavList from '@/components/NavList/NavList';
+import useIntersection from '@/hooks/useIntersection/useIntersection';
 import { HERO_ID } from '@/lib/constants';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
-import useIntersection from 'src/hooks/useIntersection/useIntersection';
 
 /**
  * Renders the header component.
@@ -56,8 +56,9 @@ const Header = () => {
             <>
               <NavList />
               <button
+                type="button"
                 onClick={handleSignOut}
-                className="cta-secondary m-[5px] flex h-10 items-center"
+                className="cta-secondary m-[5px] flex h-10 items-center sm:text-xs md:text-sm"
               >
                 Cerrar sesión
               </button>
@@ -65,6 +66,7 @@ const Header = () => {
           ) : (
             <>
               <button
+                type="button"
                 className={`cta m-[5px] flex h-10 items-center transition-opacity duration-500 ${
                   isIntersecting
                     ? 'pointer-events-none opacity-0'
@@ -74,6 +76,7 @@ const Header = () => {
                 Suscríbete ya
               </button>
               <button
+                type="button"
                 onClick={handleSignIn}
                 className="cta-secondary m-[5px] flex h-10 items-center"
               >
