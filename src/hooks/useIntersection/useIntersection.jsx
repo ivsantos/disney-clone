@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 /**
- * Checks if the observed element is intersecting the viewport.
+ * Hook that checks if the observed element is intersecting the viewport.
  * @param {string} selector - The selector of the element to observe.
  * @returns {Boolean}
  */

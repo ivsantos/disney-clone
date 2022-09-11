@@ -1,5 +1,9 @@
 import '@/styles/globals.css';
 
+import '../lib/catalog.types';
+import '../lib/details.types';
+import '../lib/videos.types';
+
 import Header from '@/components/Header/Header';
 import { SessionProvider } from 'next-auth/react';
 
