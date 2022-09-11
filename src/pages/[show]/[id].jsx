@@ -13,13 +13,10 @@ import { authOptions } from '../api/auth/[...nextauth]';
  * @returns {JSX.Element}
  */
 export default function Id({ details, videos }) {
-  console.log(details);
-  console.log(videos);
-
   return (
     <>
       <Head>
-        <title>{`Ver ${details.title} | Disney+`}</title>
+        <title>{`Ver ${details.title || details.name} | Disney+`}</title>
       </Head>
       <section className="relative mt-header-small sm:mt-header-large">
         <article className="relative">
