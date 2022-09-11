@@ -14,8 +14,6 @@ export default function CatalogList({ list }) {
     return null;
   }
 
-  console.log(list);
-
   return (
     <section className="slider mt-0">
       {list.map((category) => (
