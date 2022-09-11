@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -13,8 +13,9 @@
 
 @layer components {
   .cta,
-  .cta-secondary {
-    @apply cursor-pointer rounded-[4px] p-2 text-center uppercase text-secondary active:scale-95 active:opacity-70 active:transition active:duration-200;
+  .cta-secondary,
+  .cta-view {
+    @apply cursor-pointer rounded-[4px] p-2 text-center uppercase text-secondary transition-all duration-200 active:scale-95 active:opacity-70 active:transition active:duration-200;
   }
 
   .cta {
@@ -23,6 +24,10 @@
 
   .cta-secondary {
     @apply border border-silver bg-cta-secondary bg-opacity-80 hover:bg-cta-secondary-hover hover:text-black;
+  }
+
+  .cta-view {
+    @apply flex items-center bg-secondary px-6 py-4 text-primary hover:bg-opacity-75;
   }
 
   .navbar {
@@ -59,6 +64,18 @@
 
   .poster {
     @apply h-28 w-32 transform border-opacity-0 md:h-40 md:w-48 lg:h-48 lg:w-52 xl:h-52 xl:w-64;
+  }
+
+  .rating {
+    @apply relative w-fit text-2xl text-gray-200;
+  }
+
+  .rating-upper {
+    @apply absolute top-0 left-0 flex overflow-hidden text-yellow-400;
+  }
+
+  .rating-lower {
+    @apply flex;
   }
 }
 

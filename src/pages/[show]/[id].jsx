@@ -1,31 +1,24 @@
-import { IMG_URL } from '@/lib/constants';
+import ShowBackground from '@/components/ShowBackground/ShowBackground';
+import ShowInfo from '@/components/ShowInfo/ShowInfo';
 import { unstable_getServerSession } from 'next-auth/next';
 import Head from 'next/head';
-import Image from 'next/image';
 
 import { authOptions } from '../api/auth/[...nextauth]';
 
 export default function Id({ details, videos }) {
   console.log(details);
   console.log(videos);
+
   return (
     <>
       <Head>
         <title>{`Ver ${details.title} | Disney+`}</title>
       </Head>
-      <section>
-        <div className="relative">
-          <Image
-            alt={details.title}
-            src={`${IMG_URL}${details.backdrop_path || details.poster_path}`}
-            priority={true}
-            layout="responsive"
-            width={1920}
-            height={1080}
-          />
-          <div className="absolute inset-0 bg-gradient-radial" />
-        </div>
-        <p>{details.title}</p>
+      <section className="relative mt-header-small sm:mt-header-large">
+        <article className="relative">
+          <ShowBackground details={details} />
+          <ShowInfo details={details} videos={videos} />
+        </article>
       </section>
     </>
   );
