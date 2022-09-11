@@ -18,7 +18,9 @@ export default function CatalogList({ list }) {
     <section className="slider mt-0">
       {list.map((category) => (
         <div key={category.title} className="mb-6 w-full">
-          <h2 className="pl-8">{category.title}</h2>
+          <h2 className="pl-8 font-bold tracking-wide text-secondary">
+            {category.title}
+          </h2>
           <div className="catalog">
             {category.results.map((item) => (
               <div key={item.id}>
