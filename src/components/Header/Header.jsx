@@ -1,5 +1,6 @@
 import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
 import NavList from '@/components/NavList/NavList';
+import useHasScrolled from '@/hooks/useHasScrolled/useHasScrolled';
 import useIntersection from '@/hooks/useIntersection/useIntersection';
 import { HERO_ID } from '@/lib/constants';
 import { signIn, signOut, useSession } from 'next-auth/react';
@@ -20,6 +21,10 @@ const Header = () => {
   if (router.query?.show && router.query?.id) {
     isDetailsPage = true;
   }
+  const { hasScrolled } = useHasScrolled({
+    threshold: 25,
+    condition: isDetailsPage,
+  });
 
   const handleSignIn = useCallback(() => {
     signIn(undefined, { callbackUrl: '/catalog' });
@@ -32,8 +37,10 @@ const Header = () => {
   return (
     <header>
       <nav
-        className={`navbar fixed top-0 z-10 flex w-full items-center ${
-          isIntersecting || isDetailsPage ? 'bg-transparent' : 'bg-primary'
+        className={`navbar fixed top-0 z-10 flex w-full items-center transition-all duration-500 ${
+          isIntersecting || (isDetailsPage && !hasScrolled)
+            ? 'bg-transparent'
+            : 'bg-primary'
         }`}
       >
         <div className="mr-3 ml-5 flex h-full w-full items-center justify-between sm:text-base">
