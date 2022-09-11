@@ -46,14 +46,14 @@ export default function ShowInteraction({ videos }) {
           onClick={handleToggleTrailer}
         >
           <IconWrap Icon={IconPlayerPlay} fill="#000" />
-          <span className="pl-2">Ver</span>
+          <span className="pl-2">View</span>
         </button>
         <button
           type="button"
           className="cta-secondary p-4"
           onClick={handleToggleTrailer}
         >
-          Tráiler
+          Trailer
         </button>
         <div className="flex h-full items-center gap-4">
           <button type="button" className="cta-secondary rounded-full">

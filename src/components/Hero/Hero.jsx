@@ -20,22 +20,22 @@ const Hero = () => {
         <DisneyLogo />
       </div>
       <h1 className="text-center text-xl font-semibold">
-        Historias que esperas + historias que no imaginas
+        {"Disney+ | Stories you expect + stories you can't imagine"}
       </h1>
       <h3 className="text-center text-2xl font-semibold sm:text-2xl">
-        8,99 €<span className="text-xs"> / mes</span>
+        8,99 €<span className="text-xs"> / monthly</span>
       </h3>
       <div className="m-auto w-[90%] border-b-2 border-white border-opacity-20 pb-3 text-sm sm:text-base">
-        <a className="cta block w-full px-6 py-4">Suscríbete ya</a>
+        <a className="cta block w-full px-6 py-4">Subscribe now</a>
       </div>
       <h3 className="text-center text-2xl font-semibold sm:text-2xl">
-        89,90 €<span className="text-xs"> / año</span>
+        89,90 €<span className="text-xs"> / year</span>
       </h3>
       <p className="text-center text-sm text-silver">
-        Ahorra 2 meses con la suscripción anual
+        Save 2 months with annual subscription
       </p>
       <div className="m-auto w-[90%] pb-3 text-sm sm:text-base">
-        <a className="cta block w-full px-6 py-4">Suscríbete y ahorra</a>
+        <a className="cta block w-full px-6 py-4">Subscribe and save</a>
       </div>
       <button
         type="button"

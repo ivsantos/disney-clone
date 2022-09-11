@@ -16,7 +16,7 @@ export default function Id({ details, videos }) {
   return (
     <>
       <Head>
-        <title>{`Ver ${details.title || details.name} | Disney+`}</title>
+        <title>{`View ${details.title || details.name} | Disney+`}</title>
       </Head>
       <section className="relative mt-header-small sm:mt-header-large">
         <article className="relative">
@@ -70,7 +70,3 @@ export async function getServerSideProps(context) {
     },
   };
 }
-// Siempre y cuando el vídeo sea de youtube:
-// Coger el primer trailer que sea oficial
-// Si no, coger el primer trailer que no sea oficial
-// Si no, coger el primer video

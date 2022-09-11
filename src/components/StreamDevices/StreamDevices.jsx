@@ -7,28 +7,34 @@ import Image from 'next/image';
  */
 const StreamDevices = () => {
   return (
-    <section className="px-5">
-      <Image
-        alt="Disney+ Possible stream devices"
-        src={streamDevices}
-        layout="responsive"
-        objectFit="contain"
-      />
-      <h3 className="my-4 text-center text-[26px] font-semibold leading-9">
-        Disfruta de Disney+ en compañía
-      </h3>
-      <ul className="ml-10 mb-24 list-disc space-y-5 text-base text-silver">
-        <li>
-          Noches de series y películas con GroupWatch. Para invitar o que te
-          inviten a GroupWatch, es necesario tener una suscripción.
-        </li>
-        <li>
-          Disfruta de Disney+ en compañía, aunque estéis en diferentes lugares.
-        </li>
-        <li>Visualización simultánea con hasta 6 personas.</li>
-        <li>Pausad, rebobinad y reaccionad juntos</li>
-        <li>Fácil de configurar y compartir.</li>
-      </ul>
+    <section className="flex px-5">
+      <div>
+        <Image
+          alt="Disney+ Possible stream devices"
+          src={streamDevices}
+          layout="responsive"
+          objectFit="contain"
+        />
+      </div>
+      <div>
+        <h3 className="my-4 text-center text-[26px] font-semibold leading-9">
+          Watch the way you want
+        </h3>
+        <ul className="ml-10 mb-24 list-disc space-y-5 text-base text-silver">
+          <li>
+            Host virtual movie nights with GroupWatch. Pause, rewind and react
+            with up to six personal friends. To invite or be invited to join
+            GroupWatch, subscription is required
+          </li>
+          <li>Download any movie or series and watch on-the-go</li>
+          <li>Keep your family safe with easy parental controls</li>
+          <li>
+            An ever-growing range of titles in stunning 4K UHD and Dolby Atmos
+            sound on compatible devices
+          </li>
+          <li>Stream on up to four devices at the same time</li>
+        </ul>
+      </div>
     </section>
   );
 };

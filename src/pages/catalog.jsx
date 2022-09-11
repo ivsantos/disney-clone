@@ -22,7 +22,7 @@ const Catalog = ({ list }) => {
   return status === 'authenticated' ? (
     <>
       <Head>
-        <title>Disney+ España | Películas y series</title>
+        <title>Disney+ | Streaming movies & series</title>
       </Head>
       <Carousel />
       <Brands />
@@ -37,22 +37,22 @@ const Catalog = ({ list }) => {
 export async function getStaticProps() {
   const categories = [
     {
-      title: 'Películas más valoradas',
+      title: 'Top rated movies',
       type: 'movie',
       url: `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMBD_API_KEY}&language=en-US&page=1`,
     },
     {
-      title: 'Películas populares',
+      title: 'Top voted movies',
       type: 'movie',
       url: `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMBD_API_KEY}&language=en-US&page=1`,
     },
     {
-      title: 'Series más valoradas',
+      title: 'Top rated series',
       type: 'tv',
       url: `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.TMBD_API_KEY}&language=en-US&page=1`,
     },
     {
-      title: 'Series populares',
+      title: 'Top voted series',
       type: 'tv',
       url: `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.TMBD_API_KEY}&language=en-US&page=1`,
     },

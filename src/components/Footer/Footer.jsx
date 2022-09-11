@@ -2,7 +2,8 @@ import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
 import TMBDLogo from '@/components/TMBDLogo/TMBDLogo';
 
 /**
- * Renders the footer component.
+ * Renders the footer component, which contains the Disney+ logo and the TMDB logo for attribution.
+ * as well as some mocked (empty) links to the privacy policy, cookies, reserved rights...
  * @returns {JSX.Element}
  */
 const Footer = () => {
@@ -13,18 +14,20 @@ const Footer = () => {
           <DisneyLogo />
         </div>
         <div className="h-20 w-20">
-          <TMBDLogo />
+          <a href="https://developers.themoviedb.org/3">
+            <TMBDLogo />
+          </a>
         </div>
         <div className="space-x-8">
-          <a>Política de privacidad</a>
-          <a>Política de cookies</a>
+          <a>Privacy policy</a>
+          <a>Cookies policy</a>
         </div>
         <div className="space-x-8">
-          <a>Ayuda</a>
-          <a>¿Quiénes somos?</a>
+          <a>Help</a>
+          <a>Who are we</a>
         </div>
         <p className="pt-4 text-center">
-          © 2022 Disney y entidades relacionadas. Reservados todos los derechos.
+          © 2022 Disney and related entities. All rights reserved.
         </p>
       </div>
     </footer>

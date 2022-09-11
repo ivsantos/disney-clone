@@ -16,7 +16,7 @@ const Home = () => {
     <>
       <Head>
         <title>
-          Disney+ España | Historias que esperas + historias que no imaginas
+          {"Disney+ | Stories you expect + stories you can't imagine"}
         </title>
       </Head>
       <main>

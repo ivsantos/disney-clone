@@ -9,27 +9,27 @@ import {
 
 const navList = [
   {
-    name: 'INICIO',
+    name: 'HOME',
     icon: IconHome,
     href: '/',
   },
   {
-    name: 'BÚSQUEDA',
+    name: 'SEARCH',
     icon: IconSearch,
     href: '/',
   },
   {
-    name: 'MI LISTA',
+    name: 'WATCHLIST',
     icon: IconPlus,
     href: '/',
   },
   {
-    name: 'ORIGINALES',
+    name: 'ORIGINALS',
     icon: IconStar,
     href: '/',
   },
   {
-    name: 'PELÍCULAS',
+    name: 'MOVIES',
     icon: IconMovie,
     href: '/',
   },

@@ -61,9 +61,9 @@ const Header = () => {
               <button
                 type="button"
                 onClick={handleSignOut}
-                className="cta-secondary m-[5px] flex h-10 items-center sm:text-xs md:text-sm"
+                className="cta-secondary m-[5px] flex h-10 items-center uppercase sm:text-xs md:text-sm"
               >
-                Cerrar sesión
+                Logout
               </button>
             </>
           ) : (
@@ -76,14 +76,14 @@ const Header = () => {
                     : 'pointer-events-auto opacity-100'
                 }`}
               >
-                Suscríbete ya
+                Subscribe now
               </button>
               <button
                 type="button"
                 onClick={handleSignIn}
                 className="cta-secondary m-[5px] flex h-10 items-center"
               >
-                Iniciar sesión
+                Log in
               </button>
             </div>
           )}
