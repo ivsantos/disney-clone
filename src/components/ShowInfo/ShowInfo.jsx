@@ -11,8 +11,16 @@ import { useCallback } from 'react';
  * @returns {JSX.Element}
  */
 export default function ShowInfo({ details, videos }) {
-  const { title, genres, release_date, runtime, overview, vote_average } =
-    details;
+  const {
+    title,
+    name,
+    genres,
+    release_date,
+    first_air_date,
+    runtime,
+    overview,
+    vote_average,
+  } = details;
   const { results: showVideos } = videos;
 
   const handleGenres = useCallback(() => {
@@ -25,10 +33,10 @@ export default function ShowInfo({ details, videos }) {
   }, [genres]);
 
   const handleDate = useCallback(() => {
-    const date = new Date(release_date);
+    const date = new Date(release_date || first_air_date);
 
     return date.getFullYear();
-  }, [release_date]);
+  }, [release_date, first_air_date]);
 
   const handleRuntime = useCallback(() => {
     const minutes = runtime % 60;
@@ -41,10 +49,12 @@ export default function ShowInfo({ details, videos }) {
 
   return (
     <div id="show-info" className="mt-[30vh] max-w-3xl p-8 md:mt-[40vh]">
-      <h2 className="mb-4 text-xl font-bold">{title}</h2>
+      <h2 className="mb-4 text-xl font-bold">{title || name}</h2>
       <div className="mb-6 flex flex-col gap-1">
         <p className="text-sm">{handleGenres()}</p>
-        <p className="text-sm">{`${handleDate()} • ${handleRuntime()}`}</p>
+        <p className="text-sm">{`${handleDate()}${
+          runtime ? `• ${handleRuntime()}` : ''
+        }`}</p>
         <ShowRating rating={vote_average} />
       </div>
       <ShowInteraction videos={showVideos} />

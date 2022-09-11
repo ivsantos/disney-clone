@@ -68,6 +68,7 @@ export async function getStaticProps() {
   const list = data.map((category, index) => ({
     ...category,
     title: categories[index].title,
+    type: categories[index].type,
   }));
 
   return {

@@ -16,12 +16,14 @@
  * @property {ProductionCompaniesType[]} production_companies
  * @property {ProductionCountries[]} production_countries
  * @property {string} release_date
+ * @property {string} first_air_date
  * @property {number} revenue
  * @property {number} runtime
  * @property {SpokenLanguagesType[]} spoken_languages
  * @property {string} status
  * @property {string} tagline
  * @property {string} title
+ * @property {string} name
  * @property {boolean} video
  * @property {number} vote_average
  * @property {number} vote_count
