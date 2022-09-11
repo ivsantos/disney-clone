@@ -1,4 +1,5 @@
 import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
+import TMBDLogo from '@/components/TMBDLogo/TMBDLogo';
 
 /**
  * Renders the footer component.
@@ -10,6 +11,9 @@ const Footer = () => {
       <div className="m-auto flex flex-col items-center space-y-2 text-xs text-silver">
         <div className="h-20 w-20">
           <DisneyLogo />
+        </div>
+        <div className="h-20 w-20">
+          <TMBDLogo />
         </div>
         <div className="space-x-8">
           <a>Política de privacidad</a>
