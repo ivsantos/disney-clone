@@ -5,6 +5,7 @@
       "@/images/*": ["public/assets/images/*"],
       "@/videos/*": ["public/assets/videos/*"],
       "@/components/*": ["src/components/*"],
+      "@/hooks/*": ["src/hooks/*"],
       "@/lib/*": ["src/lib/*"],
       "@/styles/*": ["src/styles/*"],
     }
