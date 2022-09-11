@@ -3,6 +3,13 @@ import ShowTrailer from '@/components/ShowTrailer/ShowTrailer';
 import { IconPlayerPlay, IconPlus, IconUsers } from '@tabler/icons';
 import { useCallback, useEffect, useState } from 'react';
 
+/**
+ * Renders the show interaction section.
+ * @typedef {Object} Props
+ * @property {VideosType} videos
+ * @param {Props} props
+ * @returns {JSX.Element | null}
+ */
 export default function ShowInteraction({ videos }) {
   const [showTrailer, setShowTrailer] = useState(false);
   const [video, setVideo] = useState(false);

@@ -7,7 +7,7 @@ import Head from 'next/head';
 /**
  * Catalog page.
  * @typedef {Object} Props
- * @property {any} list
+ * @property {CatalogType} list
  * @param {Props} props
  * @returns {JSX.Element | null}
  */
@@ -35,18 +35,22 @@ export async function getStaticProps() {
   // const categories = [
   //   {
   //     title: 'Películas más valoradas',
+  //     type: 'movie',
   //     url: `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMBD_API_KEY}&language=en-US&page=1`,
   //   },
   //   {
   //     title: 'Películas populares',
+  //     type: 'movie',
   //     url: `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMBD_API_KEY}&language=en-US&page=1`,
   //   },
   //   {
   //     title: 'Series más valoradas',
+  //     type: 'tv',
   //     url: `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.TMBD_API_KEY}&language=en-US&page=1`,
   //   },
   //   {
   //     title: 'Series populares',
+  //     type: 'tv',
   //     url: `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.TMBD_API_KEY}&language=en-US&page=1`,
   //   },
   // ];
@@ -67,7 +71,6 @@ export async function getStaticProps() {
     {
       title: 'Películas más valoradas',
       type: 'movie',
-      touchpoint: 'top_rated',
       page: 1,
       results: [
         {
@@ -418,7 +421,6 @@ export async function getStaticProps() {
     {
       title: 'Películas populares',
       type: 'movie',
-      touchpoint: 'popular',
       page: 1,
       results: [
         {
@@ -769,7 +771,6 @@ export async function getStaticProps() {
     {
       title: 'Series más valoradas',
       type: 'tv',
-      touchpoint: 'top_rated',
       page: 1,
       results: [
         {
@@ -1100,7 +1101,6 @@ export async function getStaticProps() {
     {
       title: 'Series populares',
       type: 'tv',
-      touchpoint: 'popular',
       page: 1,
       results: [
         {

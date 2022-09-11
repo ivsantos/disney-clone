@@ -29,6 +29,10 @@ const carouselItems = [
   },
 ];
 
+/**
+ * Renders the catalog carousel of the most popular movies and shows.
+ * @returns {JSX.Element}
+ */
 export default function Carousel() {
   return (
     <section className="slider">

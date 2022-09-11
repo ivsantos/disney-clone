@@ -2,6 +2,15 @@ import useClickOutside from '@/hooks/useClickOutside/useClickOutside';
 import useEscapeKey from '@/hooks/useEscapeKey/useEscapeKey';
 import { useEffect, useRef } from 'react';
 
+/**
+ * Renders the show trailer inside a modal.
+ * @typedef {Object} Props
+ * @property {VideoResultsType} video
+ * @property {boolean} showTrailer
+ * @property {function} toggleTrailer
+ * @param {Props} props
+ * @returns {JSX.Element | null}
+ */
 export default function ShowTrailer({ video, showTrailer, toggleTrailer }) {
   const modalRef = useRef();
   const iframeRef = useRef();

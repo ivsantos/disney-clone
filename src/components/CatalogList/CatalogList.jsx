@@ -5,7 +5,7 @@ import Link from 'next/link';
 /**
  * Renders a horizontal scrollable list of catalog items.
  * @typedef {Object} Props
- * @property {any} list
+ * @property {CatalogType} list
  * @param {Props} props
  * @returns {JSX.Element | null}
  */

@@ -2,6 +2,14 @@ import ShowInteraction from '@/components/ShowInteraction/ShowInteraction';
 import ShowRating from '@/components/ShowRating/ShowRating';
 import { useCallback } from 'react';
 
+/**
+ * Renders the show info section.
+ * @typedef {Object} Props
+ * @property {DetailsType} details
+ * @property {VideosType} videos
+ * @param {Props} props
+ * @returns {JSX.Element}
+ */
 export default function ShowInfo({ details, videos }) {
   const { title, genres, release_date, runtime, overview, vote_average } =
     details;

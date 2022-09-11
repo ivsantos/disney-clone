@@ -3,6 +3,11 @@ import { useCallback, useEffect } from 'react';
 const MOUSE_EVENT_TYPE = 'mousedown';
 const TOUCH_EVENT_TYPE = 'touchstart';
 
+/**
+ * Hook that handles clicks outside of a specified element passed as ref.
+ * @param {{ current: HTMLElement}} ref
+ * @param {function} handleClose
+ */
 export default function useClickOutside(ref, handleClose) {
   const handleClickOutside = useCallback(
     (event) => {

@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 const STAR_RATING = 5;
 
 /**
- * Render a rating based on the rating property of a movie or tv show.
+ * Render a star rating based on the rating property of a movie or tv show.
  * @typedef {Object} Props
  * @property {number} rating
  * @param {Props} props

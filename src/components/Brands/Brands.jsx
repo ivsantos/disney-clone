@@ -1,6 +1,10 @@
 import brandList from '@/lib/brandList';
 import Image from 'next/image';
 
+/**
+ * Renders Disney+ brand logos with a background video that plays on hover.
+ * @returns {JSX.Element}
+ */
 export default function Brands() {
   return (
     <section className="m-8 flex flex-row flex-wrap place-content-center gap-6">
