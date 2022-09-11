@@ -17,6 +17,7 @@ export const authOptions = {
       issuer: process.env.COGNITO_ISSUER,
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 export default NextAuth(authOptions);
