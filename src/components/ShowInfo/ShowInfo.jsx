@@ -53,7 +53,7 @@ export default function ShowInfo({ details, videos }) {
       <div className="mb-6 flex flex-col gap-1">
         <p className="text-sm">{handleGenres()}</p>
         <p className="text-sm">{`${handleDate()}${
-          runtime ? `• ${handleRuntime()}` : ''
+          runtime ? ` • ${handleRuntime()}` : ''
         }`}</p>
         <ShowRating rating={vote_average} />
       </div>
