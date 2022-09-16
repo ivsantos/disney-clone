@@ -40,7 +40,7 @@ const Hero = () => {
       <button
         type="button"
         onClick={handleScrollIntoContent}
-        className="m-auto my-8 w-9 animate-bounce opacity-70 md:absolute md:bottom-8 md:right-12"
+        className="m-auto my-8 w-9 animate-bounce opacity-70 md:absolute md:bottom-8 md:right-12 md:hidden"
       >
         <DownArrow />
       </button>

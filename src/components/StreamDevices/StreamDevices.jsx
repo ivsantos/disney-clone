@@ -7,8 +7,8 @@ import Image from 'next/image';
  */
 const StreamDevices = () => {
   return (
-    <section className="flex px-5">
-      <div>
+    <section className="flex flex-col px-5 md:flex-row">
+      <div className="w-full md:max-w-[50%]">
         <Image
           alt="Disney+ Possible stream devices"
           src={streamDevices}
