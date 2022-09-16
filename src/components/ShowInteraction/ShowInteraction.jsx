@@ -1,5 +1,9 @@
 import IconWrap from '@/components/IconWrap/IconWrap';
 import ShowTrailer from '@/components/ShowTrailer/ShowTrailer';
+import {
+  PREFERRED_VIDEO_PLATFORM,
+  PREFERRED_VIDEO_TYPE,
+} from '@/lib/constants';
 import { IconPlayerPlay, IconPlus, IconUsers } from '@tabler/icons';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -21,11 +25,11 @@ export default function ShowInteraction({ videos }) {
   useEffect(() => {
     if (videos) {
       const videosFromYoutube = videos.filter(
-        (video) => video.site === 'YouTube'
+        (video) => video.site === PREFERRED_VIDEO_PLATFORM
       );
       const officialTrailer = videosFromYoutube?.find((video) => {
         const { official, type } = video;
-        if (official && type === 'Trailer') {
+        if (official && type === PREFERRED_VIDEO_TYPE) {
           return video;
         }
       });

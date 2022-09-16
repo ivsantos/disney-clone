@@ -1,6 +1,7 @@
 import useClickOutside from '@/hooks/useClickOutside/useClickOutside';
 import useEscapeKey from '@/hooks/useEscapeKey/useEscapeKey';
-import { useEffect, useRef } from 'react';
+import usePageVisibility from '@/hooks/usePageVisibility/usePageVisibility';
+import { useRef } from 'react';
 
 /**
  * Renders the show trailer inside a modal.
@@ -17,25 +18,14 @@ export default function ShowTrailer({ video, showTrailer, toggleTrailer }) {
 
   useEscapeKey(toggleTrailer);
   useClickOutside(modalRef, toggleTrailer);
-
-  const handleVisibilityChange = () => {
-    if (iframeRef.current) {
-      if (document.visibilityState === 'hidden') {
-        iframeRef.current.contentWindow.postMessage(
-          '{"event":"command","func":"pauseVideo","args":""}',
-          '*'
-        );
-      }
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-
-    return () => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-    };
-  }, []);
+  usePageVisibility({
+    ref: iframeRef,
+    actionOnHidden: () =>
+      iframeRef.current.contentWindow.postMessage(
+        '{"event":"command","func":"pauseVideo","args":""}',
+        '*'
+      ),
+  });
 
   return (
     <div

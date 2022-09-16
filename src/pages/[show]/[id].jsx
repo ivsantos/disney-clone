@@ -1,5 +1,6 @@
 import ShowBackground from '@/components/ShowBackground/ShowBackground';
 import ShowInfo from '@/components/ShowInfo/ShowInfo';
+import { URL_UNAUTHENTICATED } from '@/lib/constants';
 import { unstable_getServerSession } from 'next-auth/next';
 import Head from 'next/head';
 
@@ -42,7 +43,7 @@ export async function getServerSideProps(context) {
   if (!session) {
     return {
       redirect: {
-        destination: '/',
+        destination: URL_UNAUTHENTICATED,
         permanent: true,
       },
     };

@@ -1,19 +1,18 @@
 import DisneyLogo from '@/components/DisneyLogo/DisneyLogo';
 import NavList from '@/components/NavList/NavList';
+import useHandleSession from '@/hooks/useHandleSession/useHandleSession';
 import useHasScrolled from '@/hooks/useHasScrolled/useHasScrolled';
 import useIntersection from '@/hooks/useIntersection/useIntersection';
 import { HERO_ID } from '@/lib/constants';
-import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useCallback } from 'react';
 
 /**
  * Renders the header component.
  * @returns {JSX.Element}
  */
 const Header = () => {
-  const { data: session } = useSession();
+  const { session, handleSignIn, handleSignOut } = useHandleSession();
   const isIntersecting = useIntersection(`#${HERO_ID}`);
   const router = useRouter();
 
@@ -25,14 +24,6 @@ const Header = () => {
     threshold: 25,
     condition: isDetailsPage,
   });
-
-  const handleSignIn = useCallback(() => {
-    signIn(undefined, { callbackUrl: '/catalog' });
-  }, []);
-
-  const handleSignOut = useCallback(() => {
-    signOut({ callbackUrl: '/' });
-  }, []);
 
   return (
     <header>
@@ -70,6 +61,7 @@ const Header = () => {
             <div className="flex">
               <button
                 type="button"
+                onClick={handleSignIn}
                 className={`cta m-[5px] flex h-10 items-center transition-opacity duration-500 ${
                   isIntersecting
                     ? 'pointer-events-none opacity-0'

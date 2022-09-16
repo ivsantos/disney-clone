@@ -2,6 +2,7 @@ import Footer from '@/components/Footer/Footer';
 import Hero from '@/components/Hero/Hero';
 import HomeBackground from '@/components/HomeBackground/HomeBackground';
 import StreamDevices from '@/components/StreamDevices/StreamDevices';
+import { URL_AUTHENTICATED } from '@/lib/constants';
 import { unstable_getServerSession } from 'next-auth/next';
 import Head from 'next/head';
 
@@ -43,7 +44,7 @@ export async function getServerSideProps(context) {
   if (session) {
     return {
       redirect: {
-        destination: '/catalog',
+        destination: URL_AUTHENTICATED,
         permanent: true,
       },
     };

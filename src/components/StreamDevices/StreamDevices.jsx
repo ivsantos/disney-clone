@@ -16,7 +16,7 @@ const StreamDevices = () => {
           objectFit="contain"
         />
       </div>
-      <div>
+      <div className="self-center">
         <h3 className="my-4 text-center text-[26px] font-semibold leading-9">
           Watch the way you want
         </h3>

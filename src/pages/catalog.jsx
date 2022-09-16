@@ -1,7 +1,9 @@
 import Brands from '@/components/Brands/Brands';
 import Carousel from '@/components/Carousel/Carousel';
 import CatalogList from '@/components/CatalogList/CatalogList';
-import { signIn, useSession } from 'next-auth/react';
+import useHandleSession from '@/hooks/useHandleSession/useHandleSession';
+import categories from '@/lib/categories';
+import { SESSION_STATUS_AUTHENTICATED } from '@/lib/constants';
 import Head from 'next/head';
 
 /**
@@ -12,14 +14,9 @@ import Head from 'next/head';
  * @returns {JSX.Element | null}
  */
 const Catalog = ({ list }) => {
-  const { status } = useSession({
-    required: true,
-    onUnauthenticated() {
-      signIn();
-    },
-  });
+  const { status } = useHandleSession({ protectedRoute: true });
 
-  return status === 'authenticated' ? (
+  return status === SESSION_STATUS_AUTHENTICATED ? (
     <>
       <Head>
         <title>Disney+ | Streaming movies & series</title>
@@ -35,29 +32,6 @@ const Catalog = ({ list }) => {
  * Statically generates the catalog list.
  */
 export async function getStaticProps() {
-  const categories = [
-    {
-      title: 'Top rated movies',
-      type: 'movie',
-      url: `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMBD_API_KEY}&language=en-US&page=1`,
-    },
-    {
-      title: 'Top voted movies',
-      type: 'movie',
-      url: `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMBD_API_KEY}&language=en-US&page=1`,
-    },
-    {
-      title: 'Top rated series',
-      type: 'tv',
-      url: `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.TMBD_API_KEY}&language=en-US&page=1`,
-    },
-    {
-      title: 'Top voted series',
-      type: 'tv',
-      url: `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.TMBD_API_KEY}&language=en-US&page=1`,
-    },
-  ];
-
   const fetchedData = await Promise.allSettled(
     categories.map((category) => fetch(category.url))
   );
